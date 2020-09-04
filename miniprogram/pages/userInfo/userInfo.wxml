@@ -1,0 +1,13 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class="userinfo_container">
+	<view class="avatar_container">
+		<image class="user_avatar" src="{{avatarUrl}}"></image>
+	</view>
+	<view class="userinfo">
+		<view>{{userInfo.nickName}}</view>
+    <image wx:if="{{userInfo.gender==0}}" class="gender" src="../../images/female.png"></image>
+    <image  wx:else class="gender" src="../../images/male.png"></image>
+    <view>{{userInfo.city}} {{userInfo.country}}</view>
+	</view>
+	<image src="cloud://yhml.7968-yhml-1302923188/products/2815647_1.jpg"></image>
+</view>

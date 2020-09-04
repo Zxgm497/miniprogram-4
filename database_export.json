@@ -1,0 +1,5 @@
+{"_id":"ac5f38825f3f7765000fa95258047f12","_openid":"ogObY5ZQ4tFz4RfFD1JoIwK-mDqk","age":1.0,"sex":false,"friends":[{"username":"Frank","sex":true},{"sex":false,"username":"David"}],"username":"Frank"}
+{"_id":"ac5f38825f3f7765000fa95258047f13","_openid":"ogObY5ZQ4tFz4RfFD1JoIwK-mDqk","age":5.0,"sex":false,"friends":[{"username":"Frank","sex":true},{"sex":false,"username":"David"}],"username":"David"}
+{"_id":"ac5f38825f3f7765000fa95258047f16","_openid":"ogObY5ZQ4tFz4RfFD1JoIwK-mDqk","age":7.0,"sex":true,"friends":[{"username":"Frank","sex":true},{"sex":false,"username":"David"}],"username":"王"}
+{"_id":"ac5f38825f3f7765000fa95258047f17","_openid":"ogObY5ZQ4tFz4RfFD1JoIwK-mDqk","age":26.0,"sex":true,"friends":[{"username":"Frank","sex":true},{"sex":false,"username":"David"}],"username":"徐鹏海"}
+{"_id":"ac5f38825f3f7765000fa95258047f18","_openid":"ogObY5ZQ4tFz4RfFD1JoIwK-mDqk","age":41.0,"sex":true,"friends":[{"username":"Frank","sex":true},{"sex":false,"username":"David"}],"username":"啦啦"}

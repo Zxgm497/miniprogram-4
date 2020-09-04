@@ -1,0 +1,387 @@
+/* pages/details/details.wxss */
+
+/* 返回主页 */
+
+.backToIndex {
+  position: absolute;
+  left: 16rpx;
+  top: 16rpx;
+  z-index: 1;
+}
+
+.backToIndex view {
+  position: relative;
+  width: 72rpx;
+  height: 72rpx;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 36rpx;
+}
+
+.backToIndex view:after {
+  position: absolute;
+  content: "";
+  top: 24rpx;
+  left: 28rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border: 4rpx solid white;
+  border-top: none;
+  border-right: none;
+  transform: rotate(45deg);
+}
+
+/* 主图 */
+.main_image {
+  position: relative;
+}
+
+.descimgs {
+  width: 100%;
+  height: 750rpx;
+  margin: 0 auto;
+}
+
+.descimgs image {
+  margin-top: -50rpx;
+  width: 100%;
+}
+
+.image_counter {
+  position: absolute;
+  top: 680rpx;
+  right: 24rpx;
+  height: 48rpx;
+  width: 100rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color: white;
+  border-radius: 24rpx;
+  font-size: 24rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 详情信息区 */
+.details {
+  width: 95%;
+  margin: 20rpx auto;
+}
+
+.details view {
+  margin: 5rpx 0;
+}
+
+.details .price {
+  font-size: 28rpx;
+}
+
+.details .price span {
+  font-size: 45rpx;
+  font-weight: 600;
+  color: #ff4e00;
+}
+
+.details .sold {
+  float: right;
+  font-size: 28rpx;
+  color: gray;
+  margin-top: 16rpx;
+}
+
+.details .factory,
+.details .type {
+  font-size: 24rpx;
+  display: inline-block;
+  color: gray;
+}
+
+.details .type {
+  margin-left: 25rpx;
+}
+
+/* 购物栏 */
+.buy_panel {
+  z-index: 998;
+  width: 100%;
+  bottom: 0rpx;
+  height: 120rpx;
+  position: fixed;
+  line-height: 120rpx;
+  background-color: white;
+  box-shadow: 0rpx 0rpx 12rpx rgba(0, 0, 0, 0.2);
+}
+
+.buy_panel view {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.buy_panel .icon {
+  line-height: 48rpx;
+  margin: 0 auto;
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+  overflow: hidden;
+}
+
+.buy_panel .icon image {
+  width: 100%
+}
+
+.buy_panel .icon+text {
+  font-size: 24rpx;
+  color: #cfcfcf;
+}
+
+.buy_panel .cart,
+.buy_panel .like {
+  margin-top: 10rpx;
+  text-align: center;
+  width: 120rpx;
+  height: 100rpx;
+  line-height: 48rpx;
+}
+
+/* 按钮 */
+
+.btns {
+  position: absolute;
+  right: 24rpx;
+  top: 18rpx;
+  line-height: 84rpx;
+  height: 84rpx;
+}
+
+.btns view {
+  color: white;
+  height: 100%;
+  font-size: 28rpx;
+  width: 200rpx;
+  text-align: center;
+}
+
+.btns .buy_now {
+  text-indent: -20rpx;
+  background-image: linear-gradient(to right, #FF7A00, #FE560A);
+  border-top-right-radius: 48rpx;
+  border-bottom-right-radius: 48rpx;
+}
+
+.btns .add_to_cart {
+  text-indent: 20rpx;
+  background-image: linear-gradient(to right, #FFC500, #FF9402);
+  border-top-left-radius: 48rpx;
+  border-bottom-left-radius: 48rpx;
+}
+
+/* 商品规格选择面板 */
+.select_specs_container {
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.select_specs {
+  box-sizing: border-box;
+  position: absolute;
+  padding: 24rpx 24rpx 0rpx 24rpx;
+  bottom: 0rpx;
+  background-color: white;
+  border-top-left-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+  width: 100%;
+  animation: show .2s linear forwards;
+}
+
+@keyframes show {
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 800rpx
+  }
+}
+
+/* 商品信息 */
+.select_specs .infos {
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #efefef;
+}
+
+.select_specs .infos .pro_image {
+  display: inline-block;
+  width: 240rpx;
+  height: 240rpx;
+  overflow: hidden;
+}
+
+.select_specs .infos .pro_image image {
+  width: 100%;
+}
+
+.select_specs .infos .pro_image+view {
+  position: relative;
+  bottom: 5rpx;
+  margin-left: 24rpx;
+  display: inline-block;
+}
+
+.select_specs .infos .price {
+  text-indent: -5rpx;
+  color: #ff4e00;
+  font-size: 36rpx;
+}
+
+.select_specs .infos .store {
+  font-size: 28rpx;
+}
+
+.select_specs .infos .tips {
+  font-size: 26rpx;
+  color: #434343;
+}
+
+/* 可滚动区 */
+.scroll_container{
+  overflow-x: scroll;
+  max-height: 320rpx;
+}
+
+/* 规格 */
+.select_specs .specs_container {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #efefef;
+  width: 100%;
+}
+
+.select_specs .title{
+  font-size: 30rpx;
+}
+
+.select_specs .specs {
+  padding-top: 20rpx;
+}
+
+.select_specs .specs .spec {
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  display: inline-block;
+  padding: 16rpx 30rpx;
+  min-width: 100rpx;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 26rpx;
+  border-radius: 36rpx
+}
+
+.select_specs .specs .spec.selected {
+  background-color: #FF7A00;
+  color: white;
+}
+
+/* 数量 */
+.select_specs .count_container {
+  line-height: 72rpx;
+  padding: 20rpx 0;
+  width: 100%;
+}
+
+.select_specs .count_container view {
+  display: inline-block;
+}
+
+.select_specs .count_container .title+view{
+  float: right;
+}
+
+.select_specs .count_container .title+view view{
+  width: 72rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  margin-left: 5rpx;
+  background-color: #efefef;
+}
+.select_specs .count_container .title+view .count{
+  width: 96rpx;
+}
+
+/* 按钮 */
+.select_specs .btns {
+  padding: 20rpx 0;
+  text-align: center;
+  position: static;
+  border-top: 1px solid #efefef;
+  width: 100%;
+}
+
+.select_specs .btns view {
+  display: inline-block;
+  width: 350rpx;
+}
+
+/* 评论区 */
+.comments {
+  width: 95%;
+  margin: 20rpx auto;
+}
+
+.comments .swiper {
+  height: 280rpx;
+}
+
+.comment {
+  box-sizing: border-box;
+  padding: 20rpx 20rpx;
+  width: 98%;
+  margin: 20rpx auto;
+  box-shadow: 0 0 5rpx rgba(0, 0, 0, 0.5);
+  border-radius: 12rpx;
+  height: 240rpx;
+}
+
+.comment .avatar {
+  display: inline-block;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 36px;
+  overflow: hidden;
+}
+
+.comment .avatar image {
+  width: 100%;
+}
+
+.comment .comment_info {
+  margin-left: 24rpx;
+  display: inline-block;
+  font-size: 24rpx;
+}
+
+.comment .comment_text {
+  text-align: justify;
+  font-size: 30rpx;
+  margin-top: 16rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 详情图片 */
+.descs {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.descs image {
+  width: 100%;
+}
+
+/* 页尾 */
+.footer {
+  margin-bottom: 120rpx;
+}

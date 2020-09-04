@@ -1,0 +1,82 @@
+/* 顶部轮播图 */
+
+.swiper {
+  width: 720rpx;
+  margin: 30rpx auto;
+}
+
+.swiper swiper-item image {
+  width: 110%;
+  height: 320rpx;
+}
+
+/* 商品展示区 */
+
+.pro_list_container {
+  width: 720rpx;
+  margin: 0 auto;
+  /* border:1px solid black; */
+}
+
+.pro_list_container .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+/* 商品列表 */
+.products_container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20rpx 0;
+  justify-content: space-between;
+}
+
+/* 单个商品展示区样式 */
+
+.products_container .product {
+  text-align: center;
+  margin:16rpx 0rpx;
+  box-shadow: 0rpx 0rpx 3rpx rgba(0, 0, 0, 0.3);
+  flex: 0 1 48%;
+  box-sizing: border-box;
+  width: 325rpx;
+  height: 475rpx;
+}
+
+.products_container .product_image {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 20rpx auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.products_container .product_image image {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  margin-left: -150rpx;
+  margin-top: -165rpx;
+}
+
+.products_container .product .product_name {
+  height: 45rpx;
+  font-size: 30rpx;
+}
+
+.products_container .product .product_desc {
+  height: 36rpx;
+  font-size: 22rpx;
+  color: gray;
+}
+
+.products_container .product .product_price {
+  height: 45rpx;
+  font-size: 22rpx;
+}
+
+.products_container .product .product_price span {
+  font-size: 28rpx;
+  color: #ff4e00;
+}

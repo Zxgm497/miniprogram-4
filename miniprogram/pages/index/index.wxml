@@ -1,0 +1,40 @@
+<!--index.wxml-->
+
+<swiper class="swiper" autoplay="true" circular="true">
+	<swiper-item>
+		<image src="cloud://yhml.7968-yhml-1302923188/img/banner1.jpg"></image>
+	</swiper-item>
+	<swiper-item>
+		<image src="cloud://yhml.7968-yhml-1302923188/img/banner2.jpg"></image>
+	</swiper-item>
+	<swiper-item>
+		<image src="cloud://yhml.7968-yhml-1302923188/img/banner3.jpg"></image>
+	</swiper-item>
+	<swiper-item>
+		<image src="cloud://yhml.7968-yhml-1302923188/img/banner4.jpg"></image>
+	</swiper-item>
+</swiper>
+
+<view class="pro_list_container">
+	<view class="title">人气商品</view>
+	<!-- 分类1 -->
+	<view class="type" wx:for="{{prolists}}" wx:key="i" wx:for-item="prolist" wx:for-index="i">
+		<view class="type_title">粘土人</view>
+		<!-- 商品 -->
+		<view class="products_container">
+			<!-- 批量生成单个商品 -->
+			<view class="product" wx:for="{{prolist}}" wx:key="index" catchtap="toDetail" data-pid="{{item.pid}}">
+				<view class="product_image">
+					<image wx-if="{{!item.complete}}" mode="widthFix" src="../../images/img_loading.png"></image>
+					<image wx-else mode="widthFix" src="{{item.image}}" bindload="isCompleted" data-index="{{index}}"></image>
+				</view>
+				<view class="product_name">{{item.abbr}}</view>
+				<view class="product_desc">{{item.desc}}</view>
+				<view class="product_price">￥<span>{{item.specs[0].price}}</span> 起</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 加载进度条提示 -->
+<mp-loading type="circle" show="{{showLoading}}"></mp-loading>

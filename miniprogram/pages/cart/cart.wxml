@@ -1,0 +1,38 @@
+<!--pages/cart/cart.wxml-->
+<!-- 订单 -->
+<view class="orderlist">
+	<!-- 单个订单 -->
+	<view class="order" wx:for="{{orderlist}}" wx:key="index">
+		<!-- 单选框 -->
+		<view class="checkbox_container {{item.ischecked?'checked':''}}" bindtap="toggleSelected" data-index="{{index}}">
+		</view>
+		<!-- 图片 -->
+		<view class="pro_image">
+			<image mode="widthFix" src="{{item.image}}"></image>
+		</view>
+		<!-- 其他信息 -->
+		<view class="order_info">
+			<view class="proname">{{item.name}}</view>
+			<view class="spec">{{item.spec}}</view>
+			<view class="price_container">
+				<view class="price">￥{{item.price}}元</view>
+				<view class="minus" bindtap="changeCount" data-act="minus" data-index="{{index}}">-</view>
+				<view class="count">{{item.count}}</view>
+				<view class="add" bindtap="changeCount" data-act="add" data-index="{{index}}">+</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 结算栏 -->
+<view class="checkout_container">
+  <!-- 全选 -->
+	<view class="checkbox_container {{totalSelected?'checked':''}}" bindtap="selectAll">
+	</view>
+	<view class="selectall" bindtap="selectAll">全选</view>
+	<view class="total_price">合计<text>{{totalPrice}}</text>元</view>
+	<view class="pay">去结算</view>
+</view>
+
+
+

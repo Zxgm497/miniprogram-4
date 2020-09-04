@@ -1,0 +1,123 @@
+<!-- 返回主页 -->
+<navigator class="backToIndex" url="/pages/index/index" open-type="switchTab">
+	<view></view>
+</navigator>
+
+<!-- 主图 -->
+<view class="main_image">
+	<swiper class="descimgs swiper" bindchange="showNum">
+		<swiper-item wx:for="{{proinfo.descimages}}" wx:key="index">
+			<image mode="widthFix" src="{{item}}"></image>
+		</swiper-item>
+	</swiper>
+	<view class="image_counter">
+		{{currentImage+'/'+proinfo.descimages.length}}
+	</view>
+</view>
+
+
+<!-- 详情信息区 -->
+<view class="details">
+	<view class="sold">已售：{{proinfo.sold}}件</view>
+	<view class="price">￥<span>{{proinfo.specs[0].price}}</span>元起</view>
+	<view class="name">{{proinfo.name}}</view>
+	<view class="factory">生产厂家：{{proinfo.factory}}</view>
+	<view class="type">商品分类：{{proinfo.type}}</view>
+</view>
+
+<!-- 购物栏 -->
+<view class="buy_panel">
+	<view class="cart">
+		<view class="icon">
+			<image wx:if="{{!orderList.length}}" mode="widthFix" src="cloud://yhml.7968-yhml-1302923188/img/cart.png"></image>
+			<image wx:else mode="widthFix" src="cloud://yhml.7968-yhml-1302923188/img/cart_selected.png"></image>
+		</view>
+		<text style="color:{{orderList.length?'#ff6700':'#cfcfcf'}}">购物车</text>
+	</view>
+	<view class="like" bindtap="toggleLike">
+		<view class="icon">
+			<image wx:if="{{liked}}" mode="widthFix" src="cloud://yhml.7968-yhml-1302923188/img/like_selected.png"></image>
+			<image wx:else mode="widthFix" src="cloud://yhml.7968-yhml-1302923188/img/like.png"></image>
+		</view>
+		<text style="color:{{liked==true?'#ff6700':'#cfcfcf'}}">{{liked==true?"已收藏":"收藏"}}</text>
+	</view>
+	<view class="btns" bindtap="showSelectPanel">
+		<view class="add_to_cart">加入购物车</view>
+		<view class="buy_now">立即购买</view>
+	</view>
+</view>
+
+<!-- 商品规格选择面板 -->
+<view class="select_specs_container" wx:if="{{selectPanelShow}}" bindtap="hideSelectPanel">
+	<!-- 这里的catch仅仅只是阻止事件冒泡而已 -->
+	<view class="select_specs" catchtap="dosth">
+		<view class="infos">
+			<view class='pro_image'>
+				<image mode="widthFix" src="{{proinfo.image}}"></image>
+			</view>
+			<view>
+				<view class="price">￥{{proinfo.specs[specNow].price}}</view>
+				<view class="store">库存:{{proinfo.total-proinfo.sold}}</view>
+				<view class="tips">请选择购买方式</view>
+			</view>
+		</view>
+
+		<view class="scroll_container">
+			<view class="specs_container">
+				<view class="title">购买方式</view>
+				<view class="specs">
+					<view class="spec {{index==specNow?'selected':''}}" wx:for="{{proinfo.specs}}" wx:key="index" catchtap="changeSpec" data-index="{{index}}">{{item.spec}}</view>
+				</view>
+			</view>
+
+			<view class="count_container">
+				<view class="title">购买数量</view>
+				<view>
+					<view class="minus" catchtap="changeCount" data-act="minus">-</view>
+					<view class="count">{{count}}</view>
+					<view class="add" catchtap="changeCount" data-act="add">+</view>
+				</view>
+			</view>
+		</view>
+
+
+		<view class="btns">
+			<view class="add_to_cart" bindtap="addToCart">加入购物车</view>
+			<view class="buy_now">立即购买</view>
+		</view>
+	</view>
+</view>
+
+
+<!-- 评论区 -->
+<view class="comments">
+	<view>精选评论</view>
+	<swiper class="swiper">
+		<swiper-item wx:for="{{comments}}" wx:key="index">
+			<view class="comment">
+				<view class="avatar">
+					<image src="{{item.avatar}}" mode="widthFix"></image>
+				</view>
+				<view class="comment_info">
+					<view class="nickname">{{item.nickname}}</view>
+					<view class="commentTime">{{item.time}}</view>
+				</view>
+				<view class="comment_text">{{item.text}}
+				</view>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>
+
+<!-- 详情图片 -->
+<view class="descs">
+	<text>商品详情</text>
+	<image mode="widthFix" wx:for="{{proinfo.descimages}}" src="{{item}}" wx:key="index" bindtap="showGallery" data-index="{{index}}"></image>
+</view>
+
+<!-- 画廊 -->
+<mp-gallery show="{{garallyShow}}" img-urls="{{proinfo.descimages}}" hide-on-click="{{true}}" current="{{currentGallery}}" showDelete="{{!garallyShow}}"></mp-gallery>
+
+<!-- 页尾 -->
+<view class="footer">
+</view>

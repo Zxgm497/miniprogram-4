@@ -1,0 +1,139 @@
+/* pages/cart/cart.wxss */
+
+/* 单件商品 */
+page {
+  background-color: #efefef;
+}
+
+/* 订单表 */
+
+/* 单个订单 */
+.orderlist .order {
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 2rpx;
+}
+
+/* 单选框 */
+.checkbox_container {
+  position: relative;
+  flex: 0 1 36rpx;
+  height: 36rpx;
+  border-radius: 36rpx;
+  border: 4rpx solid #cfcfcf;
+}
+
+.checkbox_container.checked {
+  border: 4rpx solid #ff6700;
+  background-color: #ff6700;
+}
+
+.checkbox_container:after {
+  position: absolute;
+  transform: rotate(45deg);
+  content: "";
+  left: 35%;
+  top:15%;
+  width: 8rpx;
+  height: 16rpx;
+  border: 5rpx solid white;
+  border-left: hidden;
+  border-top: hidden;
+}
+
+/* 图片 */
+.orderlist .pro_image {
+  flex: 0 1 180rpx;
+  width: 180rpx;
+  height: 180rpx;
+  overflow: hidden;
+}
+
+.orderlist .pro_image image {
+  width: 100%;
+}
+
+/* 其他信息 */
+.orderlist .order_info {
+  line-height: 64rpx;
+  flex: 0 1 60%;
+}
+
+.orderlist .order_info .spec {
+  position: relative;
+  top: -18rpx;
+  font-size: 24rpx;
+  color: gray;
+}
+
+.orderlist .order_info .price_container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.orderlist .order_info .price_container .add,
+.orderlist .order_info .price_container .minus {
+  text-align: center;
+  background-color: #efefef;
+  flex: 0 1 15%;
+}
+
+.orderlist .order_info .price_container .price {
+  position: relative;
+  left: -5rpx;
+  color: #ff4e00;
+  text-align: left;
+  flex: 0 1 45%;
+}
+
+.orderlist .order_info .price_container .count {
+  text-align: center;
+  flex: 0 1 20%;
+  background-color: #efefef;
+}
+
+/* 结算 */
+.checkout_container {
+  box-sizing: border-box;
+  display: flex;
+  height: 120rpx;
+  width: 100%;
+  align-items: center;
+  /* line-height: 200rpx; */
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  padding: 0 20rpx;
+  box-shadow: 0 0 5rpx rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+}
+
+.checkout_container .selectall{
+  text-align: center;
+  flex:0 1 12%;
+}
+
+.checkout_container .total_price{
+  text-align: right;
+  flex:0 1 50%;
+  padding-right: -10rpx;
+}
+
+.checkout_container .total_price text{
+  color:#ff4e00;
+}
+
+.checkout_container .pay{
+  color:white;
+  flex:0 1 28%;
+  text-align: center;
+  height:84rpx;
+  line-height: 84rpx;
+  border-radius: 42rpx;
+  background-image: linear-gradient(to right, #FF7A00, #FE560A);
+}

@@ -1,0 +1,22 @@
+.userinfo_container{
+  width: 95%;
+  border:1px solid black;
+  margin: 0 auto;
+}
+
+.avatar_container{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  overflow: hidden;
+}
+
+.user_avatar{
+  width:120rpx;
+  height:120rpx;
+}
+
+.userinfo .gender{
+  width: 30rpx;
+  height:30rpx;
+}
