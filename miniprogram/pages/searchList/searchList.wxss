@@ -1,1 +1,61 @@
 /* pages/searchList/searchList.wxss */
+
+/* 搜索结果 */
+.search_results .search_result{
+  box-sizing: border-box;
+  padding:15rpx;
+  border-radius: 15rpx;
+  display: flex;
+  width:95%;
+  margin:0 auto;
+  background-color: white;
+  margin-bottom: 15rpx;
+}
+
+.search_result .image{
+  flex:0 0 240rpx;
+  height: 240rpx;
+  position: relative;
+  overflow:hidden
+}
+
+.search_result .image image{
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left:-120rpx;
+  margin-top:-120rpx;
+}
+
+.search_result .pro_info{
+  padding-left:25rpx;
+  flex:0 1 450rpx;
+}
+
+.search_result .pro_info .pro_desc,.search_result .pro_info .sold,.search_result .pro_info .factory{
+  color:gray;
+  font-size: 24rpx;
+}
+
+.search_result .pro_info .pro_name{
+  font-size: 36rpx;
+}
+
+.search_result .pro_info .pro_desc{
+  margin-top: 10rpx;
+}
+
+.search_result .pro_info .factory{
+  margin-top: 52rpx;
+}
+
+.search_result .pro_info .price{
+  color:#ff6700;
+  font-size:24rpx;
+  margin:0 20rpx 0 -4rpx;
+}
+
+.search_result .pro_info .price1{
+  font-size:36rpx;
+}

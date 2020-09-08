@@ -1,2 +1,20 @@
-<!--pages/searchList/searchList.wxml-->
-<text>pages/searchList/searchList.wxml</text>
+<mp-searchbar id="searchBar" bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+
+<!-- 搜索结果 -->
+<view class="search_results" wx:if="{{true}}">
+	<!-- 单个搜索结果 -->
+	<view class="search_result" wx:for="{{result}}" wx:key="index">
+		<view class="image">
+			<image mode="widthFix" src="{{item.image}}"></image>
+		</view>
+		<view class="pro_info">
+			<view class="pro_name">{{item.name}}</view>
+			<view class="pro_desc">{{item.desc}}</view>
+			<view class="factory">生产厂家:{{item.factory}}</view>
+			<view class="pro_sold">
+        <text class="price">￥<text class="price1">{{item.price}}</text> 元</text>
+				<text class="sold">已有{{item.sold}}人购买</text> 
+      </view>
+		</view>
+	</view>
+</view>
